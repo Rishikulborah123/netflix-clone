@@ -1,0 +1,5489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>netflix clone</title>
+</head>
+<style>
+    body {
+        background-color: rgb(19, 18, 18);
+        background-image: url(money\ heist\ 2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient(to left, black red);
+        image-rendering: optimizeQuality;
+        height: 100vh;
+        background-color: rgb(0, 0, 0);
+
+         overflow-x: hidden; 
+
+
+
+
+    }
+
+    nav {
+        display: flex;
+        background-color: black;
+        background-image: linear-gradient(rgb(0, 0, 0), rgb(37, 36, 36));
+
+
+
+
+    }
+
+    .icon img {
+        width: 200px;
+        padding-left: 19px;
+        padding-top: 4px;
+    }
+
+    .navi ul {
+        display: flex;
+        list-style-type: none;
+        padding-left: 90px;
+    }
+
+    .navi ul li {
+
+        padding-right: 29px;
+        margin-top: 3px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: aliceblue;
+        transition-property: all;
+        transition-duration: 0.4s;
+        cursor: context-menu;
+
+    }
+
+    .navi ul li:hover {
+        color: rgb(250, 66, 66);
+        transform: scale(1.2);
+
+    }
+
+    .search svg {
+        color: white;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        transform: scaleX(1.5);
+        margin-left: 300px;
+
+    }
+
+    .child {
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        /* padding: inherit; */
+        position: relative;
+        bottom: 17px;
+        left: 348px;
+        transition-property: all;
+        transition-duration: 0.4s;
+    }
+
+    .child:hover {
+
+        transform: scale(1.3);
+    }
+
+    .bell {
+
+        display: flex;
+        box-sizing: border-box;
+        color: white;
+        position: relative;
+        left: 135px;
+        top: 33px;
+        transform: scale(1.5);
+
+
+    }
+
+    .bell .smallcon {
+        height: 60px;
+        width: 250px;
+        border: 1px solid rgb(82, 77, 77);
+        position: absolute;
+        top: 37px;
+        right: -5px;
+        border-radius: 10px;
+        transition-property: all;
+        transition-duration: 2s;
+        background-color: rgb(31, 30, 30);
+
+        background: rgb(0, 0, 0, 0.4);
+
+
+        display: none;
+    }
+
+    .smallcon .new {
+        position: absolute;
+        left: 110px;
+        font-size: small;
+        top: 4px;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .smallcon .age {
+        position: absolute;
+        font-size: x-small;
+        top: 42px;
+        left: 110px;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        color: rgb(138, 140, 141);
+
+    }
+
+    .smallcon img {
+        width: 90px;
+        position: absolute;
+        left: 6px;
+        top: 4px;
+        border-radius: 15px;
+        border: 1px solid grey;
+    }
+
+    .smallcon::after {
+        content: "";
+        border: 1px solid rgb(207, 202, 202);
+        width: 240px;
+        display: flex;
+        position: relative;
+        bottom: 23px;
+        border-radius: 100000px;
+        left: 4px;
+
+    }
+
+    .smallcon::before {
+        content: "^";
+        font-size: larger;
+        position: relative;
+        bottom: 11px;
+        left: 232px;
+
+    }
+
+    .bell:hover .smallcon {
+        display: block;
+    }
+
+    .money .poster {
+        width: 600px;
+        position: relative;
+        top: 190px;
+        left: 50px;
+        transition: all 1.8s ease-in-out;
+    }
+
+    .money .poster:hover {
+        transform: scale(1.1);
+    }
+
+    .content {
+        color: rgb(252, 252, 252);
+        font-size: 20px;
+        word-spacing: 7px;
+        width: 1000px;
+        padding-left: 40px;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        text-decoration: solid;
+    }
+
+    .play {
+        width: 140px;
+        height: 60px;
+        background-color: white;
+        position: relative;
+        left: 042px;
+        top: 69px;
+        border-radius: 5px;
+        transition: all 0.1s ease-in-out;
+        border: 0.5px solid black;
+        cursor: auto;
+
+    }
+
+    .word {
+        position: absolute;
+        left: 71px;
+        top: 9px;
+        font-size: 27px;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .play .picon {
+        position: absolute;
+        transform: scale(3);
+        left: 29px;
+        top: 26px;
+    }
+
+    .play:hover {
+        background-color: rgb(231, 227, 227);
+        transform: scale(1.2);
+    }
+
+    .info {
+        width: 140px;
+        height: 60px;
+        background-color: white;
+        position: relative;
+        left: 210px;
+        top: 7px;
+        border-radius: 5px;
+        border: 1px solid rgb(235, 230, 230);
+        transition: all 0.1s ease-in-out;
+
+    }
+
+    .info .wordd {
+        position: absolute;
+        left: 74px;
+        top: 14px;
+        font-size: 30px;
+
+    }
+
+    .info .ficon {
+        position: absolute;
+        transform: scale(2);
+        left: 27px;
+        top: 24px;
+
+    }
+
+    .info:hover {
+        transform: scale(1.3);
+        background-color: rgb(236, 234, 234);
+    }
+
+    nav .micon img {
+        width: 39px;
+        border-radius: 10px;
+        position: relative;
+        left: 180px;
+        top: 10px;
+
+    }
+
+    .context h1 {
+        color: aliceblue;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        position: relative;
+        left: 49px;
+        top: 10px;
+    }
+
+    .container1 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(36, 35, 35);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 50px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden; 
+
+    }
+
+    .container1 img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container1:hover {
+        transform: scale(1.3) translateX(25px) scaleY(1.5);
+        z-index: 2;
+
+
+    }
+
+    .container1:hover img {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container1 .context1 {
+
+        opacity: 0;
+
+
+    }
+
+    .container1:hover .context1 {
+        opacity: 1;
+    }
+
+    .container1:hover .context1 .pcicon {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container1:hover .context1 .plus {
+        color: aliceblue;
+        position: absolute;
+        ;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container1:hover .context1 .like {
+        color: aliceblue;
+        position: absolute;
+        ;
+        left: 21px;
+        bottom: 1px;
+
+    }
+
+    .container1:hover .context1 .dropdown {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container1:hover .context1 .aninfo {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container1:hover .context1 .list {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container1:hover .context1 .list li {
+        padding-right: 27px;
+    }
+
+    .container2 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 253px;
+        left: 357px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+
+    }
+
+    .container2 .img2 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container2:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container2:hover .img2 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container2 .context2 {
+
+        opacity: 0;
+
+
+    }
+
+    .container2:hover .context2 {
+        opacity: 1;
+    }
+
+    .container2:hover .context2 .pcicon2 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container2:hover .context2 .plus2 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container2:hover .context2 .like2 {
+        color: aliceblue;
+        position: absolute;
+        left: 114px;
+        bottom: 40px;
+        transform: scale(1.35) scaleX(1.5);
+
+    }
+
+    .container2:hover .context2 .dropdown2 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container2:hover .context2 .aninfo2 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container2:hover .context2 .list2 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container2:hover .context2 .list2 li {
+        padding-right: 27px;
+    }
+
+    .container3 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 453px;
+        left: 714px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+
+    }
+
+    .container3 .img3 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container3:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container3:hover .img3 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container3 .context3 {
+
+        opacity: 0;
+
+
+    }
+
+    .container3:hover .context3 {
+        opacity: 1;
+    }
+
+    .container3:hover .context3 .pcicon3 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container3:hover .context3 .plus3 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container3:hover .context3 .like3 {
+        color: aliceblue;
+        position: absolute;
+        left: 114px;
+        bottom: 40px;
+        transform: scale(1.35) scaleX(1.5);
+
+    }
+
+    .container3:hover .context3 .dropdown3 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container3:hover .context3 .aninfo3 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container3:hover .context3 .list3 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container3:hover .context3 .list3 li {
+        padding-right: 27px;
+    }
+
+    .container4 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 654px;
+        left: 1071px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container4 .img4 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container4:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container4:hover .img4 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container4 .context4 {
+
+        opacity: 0;
+
+
+    }
+
+    .container4:hover .context4 {
+        opacity: 1;
+    }
+
+    .container4:hover .context4 .pcicon4 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container4:hover .context4 .plus4 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container4:hover .context4 .like4 {
+        color: aliceblue;
+        position: absolute;
+        left: 114px;
+        bottom: 40px;
+        transform: scale(1.35) scaleX(1.5);
+
+    }
+
+    .container4:hover .context4 .dropdown4 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container4:hover .context4 .aninfo4 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container4:hover .context4 .list4 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container4:hover .context4 .list4 li {
+        padding-right: 27px;
+    }
+
+    .container5 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 854px;
+        left: 1431px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container5 .img5 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container5:hover {
+        transform: scale(1.3) scaleY(1.5) translateX(-90px);
+        z-index: 1;
+
+
+    }
+
+    .container5:hover .img5 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container5.context5 {
+
+        opacity: 0;
+
+
+    }
+
+    .container5:hover .context5 {
+        opacity: 1;
+    }
+
+    .container5:hover .context5 .pcicon5 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container5:hover .context5 .plus5 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container5:hover .context5 .like5 {
+        color: aliceblue;
+        position: absolute;
+        left: 114px;
+        bottom: 40px;
+        transform: scale(1.35) scaleX(1.5);
+
+    }
+
+    .container5:hover .context5 .dropdown5 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container5:hover .context5 .aninfo5 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container5:hover .context5 .list5 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container5:hover .context5 .list5 li {
+        padding-right: 27px;
+    }
+
+    .releases h1 {
+        color: rgb(247, 248, 248);
+        position: relative;
+        bottom: 820px;
+        font-size: px;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        left: 54px;
+    }
+
+    .container6 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(36, 35, 35);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 61px;
+        position: relative;
+        bottom: 830px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container6 .img6 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container6:hover {
+        transform: scale(1.3) translateX(25px) scaleY(1.5);
+        z-index: 2;
+
+
+    }
+
+    .container6:hover .img6 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container6 .context6 {
+
+        opacity: 0;
+
+
+    }
+
+    .container6:hover .context6 {
+        opacity: 1;
+    }
+
+    .container6:hover .context6 .pcicon6 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container6:hover .context6 .plus6 {
+        color: aliceblue;
+        position: absolute;
+        ;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container6:hover .context6 .like6 {
+        color: aliceblue;
+        position: absolute;
+        ;
+        left: 21px;
+        bottom: 1px;
+
+    }
+
+    .container6:hover .context6 .dropdown6 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container6:hover .context6 .aninfo6 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container6:hover .context6 .list6 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container6:hover .context6 .list6 li {
+        padding-right: 27px;
+    }
+
+    .container7 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 1031px;
+        left: 355px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container7 .img7 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container7:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container7:hover .img7 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container7 .context7 {
+
+        opacity: 0;
+
+
+    }
+
+    .container7:hover .context7 {
+        opacity: 1;
+    }
+
+    .container7:hover .context7 .pcicon7 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container7:hover .context7 .plus7 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container7:hover .context7 .like7 {
+        color: aliceblue;
+        position: absolute;
+        left: 114px;
+        bottom: 40px;
+        transform: scale(1.35) scaleX(1.5);
+
+    }
+
+    .container7:hover .context7 .dropdown7 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container7:hover .context7 .aninfo7 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container7:hover .context7 .list7 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container7:hover .context7 .list7 li {
+        padding-right: 27px;
+    }
+
+    .container8 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 1231px;
+        left: 715px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container8 .img8 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container8:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container8:hover .img8 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container8 .context8 {
+
+        opacity: 0;
+
+
+    }
+
+    .container8:hover .context8 {
+        opacity: 1;
+    }
+
+    .container8:hover .context8 .pcicon8 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container8:hover .context8 .plus8 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container8:hover .context8 .like8 {
+        color: aliceblue;
+        position: absolute;
+        left: 114px;
+        bottom: 40px;
+        transform: scale(1.35) scaleX(1.5);
+
+    }
+
+    .container8:hover .context8 .dropdown8 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container8:hover .context8 .aninfo8 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container8:hover .context8 .list8 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container8:hover .context8 .list8 li {
+        padding-right: 27px;
+    }
+
+    .container9 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 1431px;
+        left: 1075px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container9 .img9 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container9:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container9:hover .img9 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container9 .context9 {
+
+        opacity: 0;
+
+
+    }
+
+    .container9:hover .context9 {
+        opacity: 1;
+    }
+
+    .container9:hover .context9 .pcicon9 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container9:hover .context9 .plus9 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container9:hover .context9 .like9 {
+        color: aliceblue;
+        position: absolute;
+        left: 114px;
+        bottom: 40px;
+        transform: scale(1.35) scaleX(1.5);
+
+    }
+
+    .container9:hover .context9 .dropdown9 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container9:hover .context9 .aninfo9 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container9:hover .context9 .list9 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container9:hover .context9 .list9 li {
+        padding-right: 27px;
+    }
+
+    .container10 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 1634px;
+        left: 1431px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container10 .img10 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container10:hover {
+        transform: scale(1.3) scaleY(1.5) translateX(-90px);
+        z-index: 1;
+
+
+    }
+
+    .container10:hover .img10 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container10.context10 {
+
+        opacity: 0;
+
+
+    }
+
+    .container10:hover .context10 {
+        opacity: 1;
+    }
+
+    .container10:hover .context10 .pcicon10 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container10:hover .context10 .plus10 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container10:hover .context10 .like10 {
+        color: aliceblue;
+        position: absolute;
+        left: 114px;
+        bottom: 40px;
+        transform: scale(1.35) scaleX(1.5);
+
+    }
+
+    .container10:hover .context10 .dropdown10 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container10:hover .context10 .aninfo10 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container10:hover .context10 .list10 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container10:hover .context10 .list10 li {
+        padding-right: 27px;
+    }
+
+    .viewing {
+        width: 230px;
+    }
+
+    .viewing h1 {
+        color: white;
+        position: relative;
+        bottom: 1600px;
+        left: 57px;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+
+    }
+
+    .viewing h3 {
+        color: white;
+        position: relative;
+        bottom: 1649px;
+        left: 290px;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        color: rgb(98, 98, 235);
+        text-shadow: 0px 0px 2px;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .viewing:hover h3 {
+        opacity: 1;
+        transform: translateX(23px);
+
+
+    }
+
+    .container11 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(36, 35, 35);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 1650px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container11 .img11 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container11:hover {
+        transform: scale(1.3) translateX(25px) scaleY(1.5);
+        z-index: 2;
+
+
+    }
+
+    .container11:hover .img11 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container11 .context11 {
+
+        opacity: 0;
+
+
+    }
+
+    .container11:hover .context11 {
+        opacity: 1;
+    }
+
+    .container11:hover .context11 .pcicon11 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container11:hover .context11 .plus11 {
+        color: aliceblue;
+        position: absolute;
+        ;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container11:hover .context11 .like11 {
+        color: aliceblue;
+        position: absolute;
+        ;
+        left: 21px;
+        bottom: 1px;
+
+    }
+
+    .container11:hover .context11 .dropdown11 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container11:hover .context11 .aninfo11 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container11:hover .context11 .list11 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container11:hover .context11 .list11 li {
+        padding-right: 27px;
+    }
+
+    .container12 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 1850px;
+        left: 359px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container12 .img12 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container12:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container12:hover .img12 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container12 .context12 {
+
+        opacity: 0;
+
+
+    }
+
+    .container12:hover .context12 {
+        opacity: 1;
+    }
+
+    .container12:hover .context12 .pcicon12 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container12:hover .context12 .plus12 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container12:hover .context12 .like12 {
+        color: aliceblue;
+        position: absolute;
+        left: 114px;
+        bottom: 40px;
+        transform: scale(1.35) scaleX(1.5);
+
+    }
+
+    .container12:hover .context12 .dropdown12 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container12:hover .context12 .aninfo12 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container12:hover .context12 .list12 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container12:hover .context12 .list12 li {
+        padding-right: 27px;
+    }
+
+    .container13 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 2050px;
+        left: 717px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container13 .img13 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container13:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container13:hover .img13 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container13 .context13 {
+
+        opacity: 0;
+
+
+    }
+
+    .container13:hover .context13 {
+        opacity: 1;
+    }
+
+    .container13:hover .context13 .pcicon13 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container13:hover .context13 .plus13 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container13:hover .context13 .like13 {
+        color: aliceblue;
+        position: absolute;
+        left: 114px;
+        bottom: 40px;
+        transform: scale(1.35) scaleX(1.5);
+
+    }
+
+    .container13:hover .context13 .dropdown13 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container13:hover .context13 .aninfo13 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container13:hover .context13 .list13 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container13:hover .context13 .list13 li {
+        padding-right: 27px;
+    }
+
+    .container14 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 2250px;
+        left: 1077px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container14 .img14 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container14:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container14:hover .img14 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container14 .context14 {
+
+        opacity: 0;
+
+
+    }
+
+    .container14:hover .context14 {
+        opacity: 1;
+    }
+
+    .container14:hover .context14 .pcicon14 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container14:hover .context14 .plus14 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container14:hover .context14 .like14 {
+        color: aliceblue;
+        position: absolute;
+        left: 114px;
+        bottom: 40px;
+        transform: scale(1.35) scaleX(1.5);
+
+    }
+
+    .container14:hover .context14 .dropdown14 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container14:hover .context14 .aninfo14 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container14:hover .context14 .list14 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container14:hover .context14 .list14 li {
+        padding-right: 27px;
+    }
+
+    .container15 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 2450px;
+        left: 1433px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container15 .img15 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container15:hover {
+        transform: scale(1.3) scaleY(1.5) translateX(-90px);
+        z-index: 1;
+
+
+    }
+
+    .container15:hover .img15 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container15.context15 {
+
+        opacity: 0;
+
+
+    }
+
+    .container15:hover .context15 {
+        opacity: 1;
+    }
+
+    .container15:hover .context15 .pcicon15 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container15:hover .context15 .plus15 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container15:hover .context15 .like15 {
+        color: aliceblue;
+        position: absolute;
+        left: 114px;
+        bottom: 40px;
+        transform: scale(1.35) scaleX(1.5);
+
+    }
+
+    .container15:hover .context15 .dropdown15 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container15:hover .context15 .aninfo15 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container15:hover .context15 .list15 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container15:hover .context15 .list15 li {
+        padding-right: 27px;
+    }
+
+    .emmy {
+        color: white;
+        position: relative;
+        bottom: 2420px;
+        left: 60px;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+
+    }
+
+    .emmy h3 {
+        position: relative;
+        left: 550px;
+        bottom: 50px;
+        color: rgb(101, 101, 230);
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+    }
+
+    .emmy:hover h3 {
+        transform: translateX(50px);
+        opacity: 1;
+
+    }
+
+    .container16 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(36, 35, 35);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 2450px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container16 .img16 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container16:hover {
+        transform: scale(1.3) translateX(25px) scaleY(1.5);
+        z-index: 2;
+
+
+    }
+
+    .container16:hover .img16 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container16 .context16 {
+
+        opacity: 0;
+
+
+    }
+
+    .container16:hover .context16 {
+        opacity: 1;
+    }
+
+    .container16:hover .context16 .pcicon16 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container16:hover .context16 .plus16 {
+        color: aliceblue;
+        position: absolute;
+        ;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container16:hover .context16 .like16 {
+        color: aliceblue;
+        position: absolute;
+        ;
+        left: 21px;
+        bottom: 1px;
+
+    }
+
+    .container16:hover .context16 .dropdown16 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container16:hover .context16 .aninfo16 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container16:hover .context16 .list16 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container16:hover .context16 .list16 li {
+        padding-right: 27px;
+    }
+
+    .container17 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 2650px;
+        left: 359px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container17 .img17 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container17:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container17:hover .img17 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container17 .context17 {
+
+        opacity: 0;
+
+
+    }
+
+    .container17:hover .context17 {
+        opacity: 1;
+    }
+
+    .container17:hover .context17 .pcicon17 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container17:hover .context17 .plus17 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container17:hover .context17 .like17 {
+        color: aliceblue;
+        position: absolute;
+        left: 26px;
+        bottom: 1px;
+        transform: scale(1.2) scaleX(1.3);
+
+    }
+
+    .container17:hover .context17 .dropdown17 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container17:hover .context17 .aninfo17 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container17:hover .context17 .list17 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container17:hover .context17 .list17 li {
+        padding-right: 27px;
+    }
+
+    .container18 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 2850px;
+        left: 717px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container18 .img18 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container18:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container18:hover .img18 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container18 .context18 {
+
+        opacity: 0;
+
+
+    }
+
+    .container18:hover .context18 {
+        opacity: 1;
+    }
+
+    .container18:hover .context18 .pcicon18 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container18:hover .context18 .plus18 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container18:hover .context18 .like18 {
+        color: aliceblue;
+        position: absolute;
+        left: 21px;
+        bottom: 1px;
+        /* transform: scale(1.35) scaleX(1.5); */
+
+    }
+
+    .container18:hover .context18 .dropdown18 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container18:hover .context18 .aninfo18 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container18:hover .context18 .list18 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container18:hover .context18 .list18 li {
+        padding-right: 27px;
+    }
+
+    .container19 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 3050px;
+        left: 1077px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container19 .img19 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container19:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container19:hover .img19 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container19 .context19 {
+
+        opacity: 0;
+
+
+    }
+
+    .container19:hover .context19 {
+        opacity: 1;
+    }
+
+    .container19:hover .context19 .pcicon19 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container19:hover .context19 .plus19 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container19:hover .context19 .like19 {
+        color: aliceblue;
+        position: absolute;
+        left: 21px;
+        bottom: 1px;
+        /* transform: scale(1.35) scaleX(1.5); */
+
+    }
+
+    .container19:hover .context19 .dropdown19 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container19:hover .context19 .aninfo19 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container19:hover .context19 .list19 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container19:hover .context19 .list19 li {
+        padding-right: 27px;
+    }
+
+    .container20 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 3250px;
+        left: 1433px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container20 .img20 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container20:hover {
+        transform: scale(1.3) scaleY(1.5) translateX(-90px);
+        z-index: 1;
+
+
+    }
+
+    .container20:hover .img20 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container20.context20 {
+
+        opacity: 0;
+
+
+    }
+
+    .container20:hover .context20 {
+        opacity: 1;
+    }
+
+    .container20:hover .context20 .pcicon20 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container20:hover .context20 .plus20 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container20:hover .context20 .like20 {
+        color: aliceblue;
+        position: absolute;
+        left: 114px;
+        bottom: 40px;
+        transform: scale(1.35) scaleX(1.5);
+
+    }
+
+    .container20:hover .context20 .dropdown20 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container20:hover .context20 .aninfo20 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container20:hover .context20 .list20 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container20:hover .context20 .list20 li {
+        padding-right: 27px;
+    }
+
+    .action {
+        color: white;
+        position: relative;
+        bottom: 3220px;
+        left: 70px;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .action h3 {
+        color: rgb(104, 104, 219);
+        position: relative;
+        left: 212px;
+        bottom: 50px;
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+    }
+
+    .action:hover h3 {
+        opacity: 1;
+        transform: translateX(40px);
+    }
+
+    .container21 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(36, 35, 35);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 3240px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container21 .img21 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container21:hover {
+        transform: scale(1.3) translateX(25px) scaleY(1.5);
+        z-index: 2;
+
+
+    }
+
+    .container21:hover .img21 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container21 .contex21 {
+
+        opacity: 0;
+
+
+    }
+
+    .container21:hover .context21 {
+        opacity: 1;
+    }
+
+    .container21:hover .context21 .pcicon21 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container21:hover .context21 .plus21 {
+        color: aliceblue;
+        position: absolute;
+        ;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container21:hover .context21 .like21 {
+        color: aliceblue;
+        position: absolute;
+        ;
+        left: 21px;
+        bottom: 1px;
+
+    }
+
+    .container21:hover .context21 .dropdown21 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container21:hover .context21 .aninfo21 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container21:hover .context21 .list21 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container21:hover .context21 .list21 li {
+        padding-right: 27px;
+    }
+
+    .container22 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 3440px;
+        left: 359px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container22 .img22 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container22:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container22:hover .img22 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container22 .context22 {
+
+        opacity: 0;
+
+
+    }
+
+    .container22:hover .context22 {
+        opacity: 1;
+    }
+
+    .container22:hover .context22 .pcicon22 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container22:hover .context22 .plus22 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container22:hover .context22 .like22 {
+        color: aliceblue;
+        position: absolute;
+        left: 26px;
+        bottom: 1px;
+        transform: scale(1) scaleX(1.3);
+
+    }
+
+    .container22:hover .context22 .dropdown22 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container22:hover .context22 .aninfo22 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container22:hover .context22 .list22 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container22:hover .context22 .list22 li {
+        padding-right: 27px;
+    }
+
+    .container23 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 3640px;
+        left: 715px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container23 .img23 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container23:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container23:hover .img23 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container23 .context23 {
+
+        opacity: 0;
+
+
+    }
+
+    .container23:hover .context23 {
+        opacity: 1;
+    }
+
+    .container23:hover .context23 .pcicon23 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container23:hover .context23 .plus23 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container23:hover .context23 .like23 {
+        color: aliceblue;
+        position: absolute;
+        left: 26px;
+        bottom: 1px;
+        transform: scale(1) scaleX(1.3);
+
+    }
+
+    .container23:hover .context23 .dropdown23 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container23:hover .context23 .aninfo23 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container23:hover .context23 .list23 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container23:hover .context23 .list23 li {
+        padding-right: 27px;
+    }
+
+    .container24 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 3840px;
+        left: 1075px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container24 .img24 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container24:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container24:hover .img24 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container24 .context24 {
+
+        opacity: 0;
+
+
+    }
+
+    .container24:hover .context24 {
+        opacity: 1;
+    }
+
+    .container24:hover .context24 .pcicon24 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container24:hover .context24 .plus24 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container24:hover .context24 .like24 {
+        color: aliceblue;
+        position: absolute;
+        left: 26px;
+        bottom: 1px;
+        transform: scale(1) scaleX(1.3);
+
+    }
+
+    .container24:hover .context24 .dropdown24 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container24:hover .context24 .aninfo24 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container24:hover .context24 .list24 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container24:hover .context24 .list24 li {
+        padding-right: 27px;
+    }
+
+    .container25 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 4040px;
+        left: 1433px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container25 .img25 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container25:hover {
+        transform: scale(1.3) scaleY(1.5) translateX(-90px);
+        z-index: 1;
+
+
+    }
+
+    .container25:hover .img25 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container25.context25 {
+
+        opacity: 0;
+
+
+    }
+
+    .container25:hover .context25 {
+        opacity: 1;
+    }
+
+    .container25:hover .context25 .pcicon25 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container25:hover .context25 .plus25 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container25:hover .context25 .like25 {
+        color: aliceblue;
+        position: absolute;
+        left: 25px;
+        bottom: 1px;
+        transform: scale(1.1) scaleX(1.2);
+
+    }
+
+    .container25:hover .context25 .dropdown25 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container25:hover .context25 .aninfo25 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container25:hover .context25 .list25 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container25:hover .context25 .list25 li {
+        padding-right: 27px;
+    }
+
+    .binge {
+        color: white;
+        position: relative;
+        bottom: 4010px;
+        left: 60px;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .binge h3 {
+        position: relative;
+        left: 553px;
+        bottom: 49px;
+        color: rgb(101, 101, 235);
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+    }
+
+    .binge:hover h3 {
+        opacity: 1;
+        transform: translateX(50px);
+
+    }
+
+    .container26 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(36, 35, 35);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 4030px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container26 .img26 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container26:hover {
+        transform: scale(1.3) translateX(25px) scaleY(1.5);
+        z-index: 2;
+
+
+    }
+
+    .container26:hover .img26 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container26 .contex26 {
+
+        opacity: 0;
+
+
+    }
+
+    .container26:hover .context26 {
+        opacity: 1;
+    }
+
+    .container26:hover .context26 .pcicon26 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container26:hover .context26 .plus26 {
+        color: aliceblue;
+        position: absolute;
+        ;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container26:hover .context26 .like26 {
+        color: aliceblue;
+        position: absolute;
+        ;
+        left: 21px;
+        bottom: 1px;
+
+    }
+
+    .container26:hover .context26 .dropdown26 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container26:hover .context26 .aninfo26 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container26:hover .context26 .list26 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container26:hover .context26 .list26 li {
+        padding-right: 27px;
+    }
+
+    .container27 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 4230px;
+        left: 359px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container27 .img27 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container27:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container27:hover .img27 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container27 .context27 {
+
+        opacity: 0;
+
+
+    }
+
+    .container27:hover .context27 {
+        opacity: 1;
+    }
+
+    .container27:hover .context27 .pcicon27 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container27:hover .context27 .plus27 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container27:hover .context27 .like27 {
+        color: aliceblue;
+        position: absolute;
+        left: 26px;
+        bottom: 1px;
+        transform: scale(1) scaleX(1.3);
+
+    }
+
+    .container27:hover .context27 .dropdown27 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container27:hover .context27 .aninfo27 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container27:hover .context27 .list27 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container27:hover .context27 .list27 li {
+        padding-right: 27px;
+    }
+
+    .container28 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 4430px;
+        left: 718px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container28 .img28 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container28:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container28:hover .img28 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container28 .context28 {
+
+        opacity: 0;
+
+
+    }
+
+    .container28:hover .context28 {
+        opacity: 1;
+    }
+
+    .container28:hover .context28 .pcicon28 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container28:hover .context28 .plus28 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container28:hover .context28 .like28 {
+        color: aliceblue;
+        position: absolute;
+        left: 26px;
+        bottom: 1px;
+        transform: scale(1) scaleX(1.3);
+
+    }
+
+    .container28:hover .context28 .dropdown28 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container28:hover .context28 .aninfo28 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container28:hover .context28 .list28 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container28:hover .context28 .list28 li {
+        padding-right: 27px;
+    }
+
+    .container29 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 4630px;
+        left: 1078px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container29 .img29 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container29:hover {
+        transform: scale(1.3) scaleY(1.5);
+        z-index: 1;
+
+
+    }
+
+    .container29:hover .img29 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container29 .context29 {
+
+        opacity: 0;
+
+
+    }
+
+    .container29:hover .context29 {
+        opacity: 1;
+    }
+
+    .container29:hover .context29 .pcicon29 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container29:hover .context29 .plus29 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container29:hover .context29 .like29 {
+        color: aliceblue;
+        position: absolute;
+        left: 26px;
+        bottom: 1px;
+        transform: scale(1) scaleX(1.3);
+
+    }
+
+    .container29:hover .context29 .dropdown29 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container29:hover .context29 .aninfo29 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container29:hover .context29 .list29 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container29:hover .context29 .list29 li {
+        padding-right: 27px;
+    }
+
+    .container30 {
+        width: 347px;
+        height: 200px;
+        background-color: rgb(39, 38, 38);
+        /* border: 1px solid rgb(8, 8, 8); */
+        border-radius: 10px;
+        margin-left: 65px;
+        position: relative;
+        bottom: 4830px;
+        left: 1433px;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .container30 .img30 {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .container30:hover {
+        transform: scale(1.3) scaleY(1.5) translateX(-90px);
+        z-index: 1;
+
+
+    }
+
+    .container30:hover .img30 {
+        height: 65%;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+    }
+
+    .container30.context30 {
+
+        opacity: 0;
+
+
+    }
+
+    .container30:hover .context30 {
+        opacity: 1;
+    }
+
+    .container30:hover .context30 .pcicon30 {
+        color: aliceblue;
+        position: absolute;
+        left: 17px;
+        top: 141px;
+        transform: scale(1.5) scaleX(1.5);
+
+    }
+
+    .container30:hover .context30 .plus30 {
+        color: aliceblue;
+        position: absolute;
+        left: 67px;
+        bottom: 39px;
+        transform: scale(1.5) scaleX(1.5);
+    }
+
+    .container30:hover .context30 .like30 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 1px;
+        transform: scale(1.1) scaleX(1.3);
+
+    }
+
+    .container30:hover .context30 .dropdown30 {
+        color: aliceblue;
+        position: absolute;
+        left: 310px;
+        top: 140px;
+        transform: scale(1.2) scaleX(1.5);
+    }
+
+    .container30:hover .context30 .aninfo30 {
+        color: aliceblue;
+        position: absolute;
+        left: 27px;
+        bottom: 23px;
+        font-size: 9px;
+        transform: scaleX(1.5);
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+
+    .container30:hover .context30 .list30 {
+        display: flex;
+        color: rgb(165, 167, 168);
+        font-size: 12px;
+        position: absolute;
+        bottom: -8px;
+        left: -20px;
+        list-style: none;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+        transform: scaleX(1.09);
+
+
+    }
+
+    .container30:hover .context30 .list30 li {
+        padding-right: 27px;
+    }
+
+    .clone {
+        color: white;
+        position: relative;
+        bottom: 4600px;
+        left: 800px;
+    }
+
+    .clone h4 {
+        position: relative;
+        left: 39px;
+        top: 5px;
+    }
+    .container1 .video1{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container1:hover .video1{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.46);
+        transform: scale;
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+        
+        
+    }
+    .container2 .video2{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container2:hover .video2{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+        
+        
+    }
+    .container3 .video3{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container3:hover .video3{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+        
+        
+    }
+    .container4 .video4{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container4:hover .video4{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+        
+        
+    }
+    .container5 .video5{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container5:hover .video5{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container6 .video6{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container6:hover .video6{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container7 .video7{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container7:hover .video7{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container8 .video8{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container8:hover .video8{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container9 .video9{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container9:hover .video9{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container10 .video10{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container10:hover .video10{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container11 .video11{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container11:hover .video11{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container13 .video13{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container13:hover .video13{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container16 .video16{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container16:hover .video16{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container17 .video17{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container17:hover .video17{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container19 .video19{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container19:hover .video19{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container21 .video21{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container21:hover .video21{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container23 .video23{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container23:hover .video23{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container24 .video24{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container24:hover .video24{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container26 .video26{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container26:hover .video26{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container27 .video27{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container27:hover .video27{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .container29 .video29{
+        width: 1px;
+        opacity: 0;
+
+    }
+    .container29:hover .video29{
+        width:250px ;
+        position: relative;
+        bottom:144px ;
+       height: px;
+        left: 45px;
+        transform: scaleX(1.45);
+        border-radius: -53px;
+        opacity: 1;
+        transition-delay: 1.5s ;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+</style>
+
+<body>
+    <nav>
+        <div class="icon">
+            <img src="Screenshot 2024-02-12 193817.png" alt="">
+        </div>
+        <div class="navi">
+            <ul>
+                <li class="home">Home </li>
+                <li>TV Shows</li>
+                <li>Movies</li>
+                <li>New And Popular</li>
+                <li>My List</li>
+                <li>Browse by Languages</li>
+
+            </ul>
+        </div>
+        <div class="search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+            <span class="child">Children</span>
+        </div>
+        <div class="bell">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell"
+                viewBox="0 0 16 16">
+                <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+            </svg>
+            <span class="smallcon">
+                <span class="new">New Arrival <br>Bhakshak</span>
+                <span class="age">1 month ago</span>
+                <img src="Bhakshak-Trailer-Release-Date-Revealed-Get-Ready-for-the-Thrill.jpg" alt="no image">
+        </div>
+        <div class="micon">
+            <img src="netflix-profile-pictures-5yup5hd2i60x7ew3.jpg" alt="">
+        </div>
+    </nav>
+    <div class="money">
+        <img class="poster" src="poster.png" alt="no">
+    </div><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div class="content">
+        <b>
+            A criminal mastermind who goes by "The Professor" has a plan to pull off the biggest heist in recorded
+            history-- to print billions of euros in the Royal mint of Spain.To help him carry out the ambitious plan,he
+            recruits eight people with certain abilities and who have nothing to lose.
+        </b>
+
+    </div>
+    <div class="play">
+        <span class="picon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-play" viewBox="0 0 16 16">
+                <path
+                    d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z" />
+            </svg></span>
+        <span class="word"><b>Play</b></span>
+    </div>
+    <div class="info">
+        <span class="ficon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-info-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                <path
+                    d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+            </svg></span>
+        <span class="wordd"><b>Info</b></span>
+    </div><br><br><br><br><br>
+    <div class="context">
+        <h1>We Think You'll Love These</h1>
+    </div><br><br><br>
+    <div class="container1">
+        <img src="https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABWXQxLDjLmwGIABzphyyuYgBG8QyA8PYXjbmzoLkfJvz6bYX7OpI8IDcxSeGcQsT4spY44gQfg6r4uv9Nb2N1J7fCVNJ1xiwLSOpm4DUTvaEtg_weoQRTJoHxBoMv2FJmbGZp-EaakoS-usRQy42m4wYkPEzTBW5kJU.webp?r=d5c"
+            alt="no image">
+       <video class="video1"  controls src="ANIMAL _ Official Teaser _ Ranbir Kapoor, Rashmika M, Anil K, Bobby Deol _ Sandeep Reddy Vanga.mp4" ></video>
+        <div class="context1">
+            
+
+            <div class="pcicon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo">
+                3h 24min &nbsp;&nbsp;&nbsp;A
+            </span>
+            <ul class="list">
+                <li>Action</li>
+                <li>Adventure</li>
+                <li>drama</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container2">
+        <img class="img2"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABfSbFRnfKWiLd3HkJdxlGdOxYzQSRo4QeR3XXvuQo2G7-WzGwCE0lCl4bnI1RgcItWMnLL6TC8CSK2edHrdv5ntWPRAZw3qsiob-JUEnDrwElpQBKGzh5avW4G5A-crHEYA1gAnV3KorLw-s7sgQaSAds09gTyZr4jcax_-vhjuQ7N3eHwf_eJCHpNP-BB4.jpg?r=84b
+            alt="no image">
+            <video class="video2"  controls src="BERLIN _ Official Trailer _ Netflix.mp4" ></video>
+        <div class="context2">
+
+            <div class="pcicon2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+            </div>
+            <div class="like2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                </svg>
+            </div>
+
+            <div class="dropdown2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo2">
+                5 Seasons &nbsp;&nbsp;&nbsp;A
+            </span>
+            <ul class="list2">
+                <li>Suspenful</li>
+                <li>Exciting</li>
+                <li>Thriller</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container3">
+        <img class="img3"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABYIWwzftYFhohxbceaZGPYPr8na_RNwTBGu6pH6tCoTVg85wody4V4s1D3iP4UD1SiT7cN6PKrQ_reZ9pRA6YDOrKyIxAFgWR68.webp?r=01d
+            alt="no image">
+
+            <video class="video3"  controls src="Breaking Bad - Fan Made Trailer.mp4" ></video>
+        <div class="context3">
+
+            <div class="pcicon3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+            </div>
+            <div class="like3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                </svg>
+            </div>
+
+            <div class="dropdown3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo3">
+                5 Seasons &nbsp;&nbsp;&nbsp;A
+            </span>
+            <ul class="list3">
+                <li>Violent</li>
+                <li>Gritty</li>
+                <li>Thriller</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container4">
+        <img class="img4"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABUCFv-imj1y6uymK8pFHUgk-gnlnyTtJjeS9Zie7giLWWsx3Wp3pLcY93lcHpUv6VQFaoCbsL_xQ9BsvQQnCbDY5lXwiGvO4v7znCP1xwsaPbsZD00Hm01U5KeK_CDg__QClUQKU_4Guh_45xR_NNWLDxEVG98LBUjstjMFYQrIgj9O4oLCVOwk4MKdb2qc.jpg?r=03a
+            alt="no image">
+            <video class="video4"  controls src="The Railway Men _ Official Trailer _ Netflix India.mp4" ></video>
+        <div class="context4">
+
+            <div class="pcicon4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+            </div>
+            <div class="like4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                </svg>
+            </div>
+
+            <div class="dropdown4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo4">
+                &nbsp; &nbsp; Limited Series &nbsp;&nbsp;&nbsp;U/A 16+
+            </span>
+            <ul class="list4">
+                <li>Ominius</li>
+                <li>Gritty</li>
+                <li>Thriller</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container5">
+        <img class="img5"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABepTIImuVnycs9JkPoSLvhaJwrMdy0l8ug38PtUVdZrb5aKCr7SqhmPD6SIQN0mm7BMqX7gmint-fBuB_G6MNGaHSbzVVbRRTCg.webp?r=b20
+            alt="no image">
+            <video class="video5"  controls src="Jawan _ Official Trailer _ Shah Rukh Khan, Vijay Sethupathi, Nayanthara, Deepika Padukone.mp4" ></video>
+        <div class="context5">
+
+            <div class="pcicon5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+            </div>
+            <div class="like5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                </svg>
+            </div>
+
+            <div class="dropdown5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo5">
+                &nbsp; &nbsp; Limited Series &nbsp;&nbsp;&nbsp;U/A 16+
+            </span>
+            <ul class="list5">
+                <li>Ominius</li>
+                <li>Gritty</li>
+                <li>Thriller</li>
+            </ul>
+        </div>
+    </div>
+    <div class="releases">
+        <h1>New Releases</h1>
+    </div>
+
+    <div class="container6">
+        <img class="img6"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABfSAajYYhJi66UkHRLe_iEJWcMjGq1Jaamaz-W3ZKo8eYkV8oHaXDAE21ISdVnyXrpgNV95eOOsOUN7S1YXqafvZ8Gen2LZz83-nc8dseIL76IyDHXU5k6aQBe9YZEYQMWtR53rvNLQwdPAsJytxH7kwKE14fyRrbIA.webp?r=76f
+            alt="no image">
+            <video class="video6"  controls src="Dunki _ Official Trailer _ Shah Rukh Khan, Rajkumar Hirani, Taapsee Pannu, Vicky Kaushal.mp4" ></video>
+        <div class="context6">
+
+            <div class="pcicon6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo6">
+                2h 40min &nbsp;&nbsp;&nbsp;U/A 16+
+            </span>
+            <ul class="list6">
+                <li>Heartfelt</li>
+                <li>Romantic</li>
+                <li>dramedy</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container7">
+        <img class="img7"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABRp0uoxSN9q7tpSlAy75GRYEI-9hUVz4SvuusMBS6B1ae8GQwvcKQkNu3ZpzltmzFU8gbvYYf3AyB-Fpr5vMtQ2VRqMEazhUxHvssSxx9UO3gqjH8yzzzYOW36mUjnmVWMu_u_05WXWTtv-tn9XPwpjqr6Mcdf1p-V4.webp?r=ecb
+            alt="no image">
+            <video class="video7"  controls src="Dune Official Trailer.mp4" ></video>
+        <div class="context7">
+
+            <div class="pcicon7">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus7">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+            </div>
+            <div class="like7">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                </svg>
+            </div>
+
+            <div class="dropdown7">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo7">
+                &nbsp; &nbsp; 2h 30 min &nbsp;&nbsp;&nbsp;U/A 16+
+            </span>
+            <ul class="list7">
+                <li>Mind Blending</li>
+                <li>Ominous</li>
+                <li>Epic World</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container8">
+        <img class="img8"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABfYH9X1RvSq4D8g9iRr85kU_4Su3pRmfZIignAZiFxNfi08Eg0bL20B3DJUPsgY5UGiUKhYbtqu2UPcAmwMDCNPGxlkijMtPPuFohvpTfMXubgs6LZ8yemwS9pTNaod5rM8RdoChSdHfysgjx8Yy7__PAu6brVAAa2t7S-WUaYTU5fNI5W7vLt6hhkiUZ8s.jpg?r=9d8
+            alt="no image">
+            <video class="video8"  controls src="House of Ninjas _ Official Trailer _ Netflix.mp4" ></video>
+        <div class="context8">
+
+            <div class="pcicon8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+            </div>
+            <div class="like8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                </svg>
+            </div>
+
+            <div class="dropdown8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo8">
+                &nbsp; &nbsp; 8 Episodes &nbsp;&nbsp;&nbsp;U/A 16+
+            </span>
+            <ul class="list8">
+                <li>Dark</li>
+                <li>Suspensful</li>
+                <li>Action</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container9">
+        <img class="img9"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABS7lCMcgnywi_1J2HF5By1z-5doygmwBZKWF7uX3cpP4wT71bwKE7oFsJaq0gQE9Wzp_qQZgKmkRygWQS39aWZTOhpJOHs3BNEQPk9fISuo2zgwPoE0Cy2N3elzBKcNO4dI6u6pqmFTKQo-jOrDqS9AZItVavtm0gsaONrPN_p_klDwL0C3MAH__X9l_Nm8.jpg?r=b70
+            alt="no image">
+            <video class="video9"  controls src="Einstein and the Bomb Netflix Docudrama Trailer.mp4" ></video>
+        <div class="context9">
+
+            <div class="pcicon9">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus9">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+            </div>
+            <div class="like9">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                </svg>
+            </div>
+
+            <div class="dropdown9">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo9">
+                &nbsp; &nbsp; 1h 60min &nbsp;&nbsp;&nbsp;U/A 16+
+            </span>
+            <ul class="list9">
+                <li>Riveting</li>
+                <li>Cerebral</li>
+                <li>Docudrama</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container10">
+        <img class="img10"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABYnXKkKacQwbEaB_7Hpd7fufuF9RfRd_uDj0sOXJyZ5COdSLANjoW39YPh-SoV9Tzg_s0pGuuJo-oxJQPom_Wc98KjudBe9AFXuljATNROWk7Wn_d__CdrExM0KjN4SX8kZu5Hdd-mwJOPqcP9gASKpjE2rO34pCJzU.webp?r=0d3
+            alt="no image">
+            <video class="video10"  controls src="Guntur Kaaram _ Official trailer _ Mahesh Babu, Sreeleela, Ramya Krishnan, Prakash Raj, Jayaram.mp4" ></video>
+        <div class="context10">
+
+            <div class="pcicon10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+            </div>
+            <div class="like10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                </svg>
+            </div>
+
+            <div class="dropdown10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo10">
+                &nbsp; &nbsp; Limited Series &nbsp;&nbsp;&nbsp;U/A 16+
+            </span>
+            <ul class="list10">
+                <li>Ominius</li>
+                <li>Gritty</li>
+                <li>Thriller</li>
+            </ul>
+        </div>
+    </div>
+    <div class="viewing">
+        <h1>Casual Viewing
+            <!-- <h3>Explore More</h3> -->
+        </h1>
+        <h3>Explore More ></h3>
+
+    </div>
+
+    <div class="container11">
+        <img class="img11"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABVBDg6YsEPAj5ZzuI5YFoH3HLWBs9nmmLM8Ns1yoOIA8bQuRN7SGD80D8a5Daox6wQ4skCdU6uD39gW-r-hFRgsrQgHnpNKhhUw.webp?r=663
+            alt="no image">
+            <video class="video11"  controls src="Friends_ Joey Finds Out (Season 5 Clip) _ TBS.mp4" ></video>
+        <div class="context11">
+
+            <div class="pcicon11">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus11">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like11">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown11">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo11">
+                10 Seasons &nbsp;&nbsp;&nbsp;U/A 13+
+            </span>
+            <ul class="list11">
+                <li>Sitcom</li>
+                <li>Witty</li>
+                <li>Quirky</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container12">
+        <img class="img12"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABc0cn4mrLS3dMwvzjPilNHEYPumSkwTkzXeN2Gfel-5RC1ImPegoD1Z2xlFavWkoR5fcUMaZ-X6ZcLw6Ux5rH1gDG3X3Ca8mpGOdNvU93-j1K96pyLsabrFWmnXq3Net8Mkr4knaTeqjj8QzAdBn_87kZXTFUeVKy6L0wfWrilr3d9BT3C7Q6Mr7BuDF3RLxVqvipXay-OMJclacW7ppDZfgwwVbHImkDNqaI8amyvU89KaBDlTsDhiTzTjMQN3Q8LOUFgnk64ebgIGRsJc3CxUt.webp?r=09f
+            alt="no image">
+           
+        <div class="context12">
+
+            <div class="pcicon12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+            </div>
+            <div class="like12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                </svg>
+            </div>
+
+            <div class="dropdown12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo12">
+                &nbsp; &nbsp; 10 Seasons &nbsp;&nbsp;&nbsp;HD
+            </span>
+            <ul class="list12">
+                <li>Dark</li>
+                <li>Drama</li>
+                <li>Tothured Genius</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container13">
+        <img class="img13"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABR9l152ide0Mf6PElkIRyCTOQFHWFfwzuhfUt8_o98jUrK5WionKKC2Qiv4d4XtX1e1UmP5YbqIFUtfLCsjsz3bcE-gbsra16Yo.webp?r=722
+            alt="no image">
+            <video class="video13"  controls src="Young Sheldon CBS Trailer #1.mp4" ></video>
+        <div class="context13">
+
+            <div class="pcicon13">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus13">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+            </div>
+            <div class="like13">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                </svg>
+            </div>
+
+            <div class="dropdown13">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo13">
+                &nbsp; &nbsp; 4 Seasons &nbsp;&nbsp;&nbsp;U/A 13+
+            </span>
+            <ul class="list13">
+                <li>Sitcom</li>
+                <li>Coming-Of-Age</li>
+                <li>1980s</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container14">
+        <img class="img14"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABSRisWfG2ZPSVKrbGPT4kgRQreiab7aCKf6exyVSzshAzOBosnvs-_qTn4vbCKgSQei8QMD7OKVSp5DXM3fs7iIJm4rl7EjXUUc.webp?r=595
+            alt="no image">
+
+        <div class="context14">
+
+            <div class="pcicon14">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus14">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+            </div>
+            <div class="like14">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                </svg>
+            </div>
+
+            <div class="dropdown14">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo14">
+                &nbsp; &nbsp; 6 Seasons &nbsp;&nbsp;&nbsp;U/A 16+
+            </span>
+            <ul class="list14">
+                <li>Emotional</li>
+                <li>Drama</li>
+                <li>Medical</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container15">
+        <img class="img15"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABa9PMbKaeDq9j2cX7gjZjBDHyzXcaVpwydWfbr914OvqCgQG3jTFguoshxvfcKXnPfeej4rySPG1YGXcVMRau4RzPyqufIArzIA.webp?r=580
+            alt="no image">
+
+        <div class="context15">
+
+            <div class="pcicon15">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus15">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+            </div>
+            <div class="like15">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                </svg>
+            </div>
+
+            <div class="dropdown15">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo15">
+                &nbsp; &nbsp; 12 Seasons &nbsp;&nbsp;&nbsp;U/A 13+
+            </span>
+            <ul class="list15">
+                <li>Quirky</li>
+                <li>Sitcom</li>
+                <li>Ensemble</li>
+            </ul>
+        </div>
+    </div>
+    <div class="emmy">
+        <h1>Emmy-Winning Suspensful Tv Shows</h1>
+        <h3>Explore More ></h3>
+    </div>
+    <div class="container16">
+        <img class="img16"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABQLoucWH27Lb8VXQ4d0oBBQ2M266hQePev0-wlHY-agISpQAttac-vEg75eOFNQadWPlMuLhI3RX6gmWl7nj7LqATl2spMU4zUZ_Q9-eshZ8F4dLHRjB2alZFGLD48kFF-zc.jpg?r=2e3
+            alt="no image">
+            <video class="video16"  controls src="Stranger Things _ Official Final Trailer _ Netflix.mp4" ></video>
+        <div class="context16">
+
+            <div class="pcicon16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo16">
+                4 Seasons &nbsp;&nbsp;&nbsp;U/A 16+
+            </span>
+            <ul class="list16">
+                <li>Ominous</li>
+                <li>Nostalgic</li>
+                <li>Sci-Fi TV</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container17">
+        <img class="img17"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABUKdkPYo_TDDlTLyqU9bB6T5F2tXSCy4PcogE5nN0L3yp7lLUn8dPB8hRg7LwSo4KLdgQqQO3dc9toaWk5UQowA4etOKQyivt6RmKNkarsjcDPNAjztmSvHQ5DjEmn7ZacK2.jpg?r=5e6
+            alt="no image">
+            <video class="video17"  controls src="Squid Game _ Official Trailer _ Netflix.mp4" ></video>
+        <div class="context17">
+
+            <div class="pcicon17">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus17">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like17">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown17">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo17">
+                1 Season &nbsp;&nbsp;&nbsp;U/A 16+
+            </span>
+            <ul class="list17">
+                <li>Suspenseful</li>
+                <li>Thriller</li>
+                <li>Ensemble</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container18">
+        <img class="img18"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABef-JRlU6Ias9GOTNIj8fxFkvojU4LacWdQKMlhzIyVgefO66p9ttA2e9Oi0nVPBMZYzQJnwf5Asmwi6LxZ9G_b39iItjAcDznHjH7Gl-tzAzLGt64z0Ncy_Vymor91Xh7DB.jpg?r=b2c
+            alt="no image">
+        <div class="context18">
+
+            <div class="pcicon18">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus18">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like18">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown18">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo18">
+                4 Season &nbsp;&nbsp;&nbsp;A
+            </span>
+            <ul class="list18">
+                <li>Ominous</li>
+                <li>Offbeat</li>
+                <li>Ensemble</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container19">
+        <img class="img19"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABTevtf5BoXTRpIobKjS_o_tKLvsWCqiVs5MXAnvWeYuAx2sBCAF_IPToazaNPdHFfS3w1a8z-S8yzo2By5-x9AUFsuud3U7yRoFHYVdP1pes6nSvt-ZJOpjLVzXc9yXaXdz2.jpg?r=4ef
+            alt="no image">
+            <video class="video19"  controls src="House of Cards _ Series Trailer [HD] _ Netflix.mp4" ></video>
+        <div class="context19">
+
+            <div class="pcicon19">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus19">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like19">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown19">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo19">
+                6 Seasons &nbsp;&nbsp;&nbsp;A
+            </span>
+            <ul class="list19">
+                <li>Cerebral</li>
+                <li>Dark</li>
+                <li>Thriller</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container20">
+        <img class="img20"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABZo8zh3pTusRpVWp20SAovDMPEkdch2jCeboYbVIc8Jdd1NKJxBa8X8CdPZ0ahmJQOjjwdfSIkFtjBwrbxfLuin-E6goh_MP6X4m_8cY2eO-tqtctLKF8d0sqU5GPssSBsDB.jpg?r=e88
+            alt="no image">
+        <div class="context20">
+
+            <div class="pcicon20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo20">
+                1 Season &nbsp;&nbsp;&nbsp;U/A 16+
+            </span>
+            <ul class="list20">
+                <li>Explosive</li>
+                <li>Slick</li>
+                <li>Adventure</li>
+            </ul>
+        </div>
+    </div>
+    <div class="action">
+        <h1>Action Movies</h1>
+        <h3>Explore More ></h3>
+    </div>
+    <div class="container21">
+        <img class="img21"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABeORJ0LJVOLw2ucF-ZdKDLh7HnEVC0LXiJyCE9GuGLb3sq7A3J7wHJCf3jfZ6jkTovpXwDq3j81U-yzpKlR4NCM_eoT67fmaZRSMIHkSwiXtQnNBuTXhUqCaycau2RlgyiF9.jpg?r=3a5
+            alt="no image">
+            <video class="video21"  controls src="EXTRACTION 2 _ Official Trailer _ Netflix.mp4" ></video>
+        <div class="context21">
+
+            <div class="pcicon21">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus21">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like21">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown21">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo21">
+                2h 3min &nbsp;&nbsp;&nbsp;A
+            </span>
+            <ul class="list21">
+                <li>Explosive</li>
+                <li>Violent</li>
+                <li>Action Thriller</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container22">
+        <img class="img22"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABQUBdtCjMcnUI0kf3OT-nhk67If9Pe9l2u2x90DrTWMN_T8d3epHTRlyBOESmif84O36goDo0z11T68v7z8MDCgGKkApb9EM8K4.webp?r=0de
+            alt="no image">
+        <div class="context22">
+
+            <div class="pcicon22">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus22">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like22">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown22">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo22">
+                2h 13min &nbsp;&nbsp;&nbsp;A
+            </span>
+            <ul class="list22">
+                <li>Rousing</li>
+                <li>Action Thriller</li>
+                <li>Military</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container23">
+        <img class="img23"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABQXsiMnEE2jx9N2_xzjN_yd--BMStiqLH7vTZP-rguiT96l6Nw2YJgE6ct1QaAlkoP1MPqyEXePm4tezJNy1jRrAFTNVmRlA4mAmrDuuKypxaQynG6FsdwAVn0BZC4PjFP08.jpg?r=396
+            alt="no image">
+            <video class="video23"  controls src="Lift _ New Year's Final Trailer _ Netflix.mp4" ></video>
+        <div class="context23">
+
+            <div class="pcicon23">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus23">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like23">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown23">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo23">
+                1h 46min &nbsp;&nbsp;&nbsp;A
+            </span>
+            <ul class="list23">
+                <li>Suspenseful</li>
+                <li>Exciting</li>
+                <li>Action Comedy</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container24">
+        <img class="img24"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABV1Om02JQsmzyvyIbPk-Ccad_RIFxdjhEPbS6rkOPteuPDt1BtQOvXj81eoIfB0TtLR1ADs_x7H2-eVuTq0E2j9wXzRS2wskbNk.webp?r=67e
+            alt="no image">
+            <video class="video24"  controls src="Top Gun_ Maverick _ NEW Official Trailer (2022 Movie) - Tom Cruise.mp4" ></video>
+        <div class="context24">
+
+            <div class="pcicon24">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus24">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like24">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown24">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo24">
+                2h 11min &nbsp;&nbsp;&nbsp;A
+            </span>
+            <ul class="list24">
+                <li>Adrenaline Rush</li>
+                <li>Explosive</li>
+                <li>War</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container25">
+        <img class="img25"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABYV2OxOV41hJdevr4FsJRnWozRmvL2LnbjICa2_0fKEPK3VKnoQDBgRU8XUpnOGAYZwAxKtRXIOu_LH2aO0KAgy70AkhQC3w5Ls.webp?r=c44
+            alt="no image">
+        <div class="context25">
+
+            <div class="pcicon25">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus25">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like25">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown25">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo25">
+                2h 40min &nbsp;&nbsp;&nbsp;A
+            </span>
+            <ul class="list25">
+                <li>Violent</li>
+                <li>Epic</li>
+                <li>Cult</li>
+            </ul>
+        </div>
+    </div>
+    <div class="binge">
+        <h1>Binge-worthy US and Sci-Fi TV Show</h1>
+        <h3>Explore More ></h3>
+    </div>
+    <div class="container26">
+        <img class="img26"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABUu-vJuBZ6OzVnSqQZjmD-FWRVr0q2HwVxyHE8YeNhtPxWGwxmqbY_SNTREdsnB65OuWGuq2bhn7Kvu86ViMNld2eEE2Wg8pMY5YQSwYOZ_fXbi8ZzOUMEbZ6gFaiCy2H4Ny.jpg?r=079
+            alt="no image">
+            <video class="video26"  controls src="THE WITCHER _ MAIN TRAILER _ NETFLIX.mp4" ></video>
+        <div class="context26">
+
+            <div class="pcicon26">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus26">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like26">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown26">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo26">
+                3 Seasons &nbsp;&nbsp;&nbsp;A
+            </span>
+            <ul class="list26">
+                <li>Exciting</li>
+                <li>Adventure</li>
+                <li>Epic world</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container27">
+        <img class="img27"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABdX5c7H5uPkGyfb7hWvZ7O8qlvzigPIPa7cJ7knfq3Rf2FNDJVJ5JT6N9ESPDyF9gnKe7fVqqn38LftQ1GA1uiFmbaTECFnRsLiFpFYN28Mz8uNINYj1gBSsPmrZjslDv4WN.jpg?r=f18
+            alt="no image">
+            <video class="video27"  controls src="Manifest_ Season 4 _ Official Trailer _ Netflix.mp4" ></video>
+        <div class="context27">
+
+            <div class="pcicon27">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus27">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like27">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown27">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo27">
+                4 Seasons &nbsp;&nbsp;&nbsp;U/A 16+
+            </span>
+            <ul class="list27">
+                <li>Mind Blending</li>
+                <li>Suspenseful</li>
+                <li>Sci-Fi TV</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container28">
+        <img class="img28"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABR3gw4ziZpEnJPly6lqoh7BtMBEQ0ehCXQlQXnMBL8ffyGtjiJPNyNIJ51bwlIdHfSzzCiRbS-di0j7I56jww1IPkdr0P-i_HDZOCQEOI-1q8ZcwcijwfHlUsNwvOuduv3hI.jpg?r=34d
+            alt="no image">
+        <div class="context28">
+
+            <div class="pcicon28">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus28">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like28">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown28">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo28">
+                3 Seasons &nbsp;&nbsp;&nbsp;A
+            </span>
+            <ul class="list28">
+                <li>Dystopian</li>
+                <li>Intimate</li>
+                <li>Sci-Fi TV</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container29">
+        <img class="img29"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABSKZh8wvxR5SqTYOBGzK_h2rV22qGJ54XkIyZTshA9q4k_N3GEB4RL-nH6lhawIyMAND10sAZiI6uos7EpXnelTCX2vQitro7nlk7K1b6cRsIVqpWYXt_mkbdOZPhIKCfXSd.jpg?r=67c
+            alt="no image">
+            <video class="video29"  controls src="Lost in Space _ Official Trailer _ Final Season _ Netflix.mp4" ></video>
+        <div class="context29">
+
+            <div class="pcicon29">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus29">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like29">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown29">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo29">
+                4 Seasons &nbsp;&nbsp;&nbsp;U/A 7+
+            </span>
+            <ul class="list29">
+                <li>Slick</li>
+                <li>Suspenseful</li>
+                <li>Thriller</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container30">
+        <img class="img30"
+            src=https://occ-0-4995-2186.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABWf5J72-EjsujJpnRyLAympmviGcPt7VTBRKy-z7MjbkYxQWNgLk7tf11x-13KjD7PpDR6KjSi5dWpDqDm9KkH5VEWaZwPeHzI0ECKE7wQE5S8I8bUQDqSuY98wUf8efwbna.jpg?r=9f9
+            alt="no image">
+        <div class="context30">
+
+            <div class="pcicon30">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                </svg>
+            </div>
+            <div class=" plus30">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                </svg>
+                <div class="like30">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="dropdown30">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg>
+            </div>
+            <span class="aninfo30">
+                11 Episodes &nbsp;&nbsp;&nbsp;A
+            </span>
+            <ul class="list30">
+                <li>Dark</li>
+                <li>Fantasy TV</li>
+                <li>Epic World</li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="clone">
+        <h1>A Netflix Clone</h1>
+        <h4>By Rishikul Borah </h4>
+    </div>
+   
+</body>
+
+</html>
